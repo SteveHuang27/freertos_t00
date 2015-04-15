@@ -222,6 +222,7 @@ main(void)
 
     while(1)
     {
+        UARTprintf("Out of control by vTaskStartScheduler\n");
     }
 }
 /*
