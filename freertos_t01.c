@@ -206,7 +206,7 @@ main(void)
 
     Global_Queue_Handle=xQueueCreate(3,sizeof(int));
     UARTprintf("\n\nWelcome to the EK-TM4C123GXL FreeRTOS Demo!\n");
-    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,1,NULL);
+    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,3,NULL);
     xTaskCreate(my_task1, (signed portCHAR *)"my_task1", 1024, NULL,1,NULL);
 
 
