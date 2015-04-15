@@ -157,7 +157,7 @@ ConfigureUART(void)
 //
 //*****************************************************************************
 xQueueHandle Global_Queue_Handle=0;
-#define mainDELAY_LOOP_COUNT		( 0xfffff )
+#define mainDELAY_LOOP_COUNT		( 0xffffffff )
 void my_task1(void *p)
 {
 	const char *pcTaskName="Task 1 is running\n";
