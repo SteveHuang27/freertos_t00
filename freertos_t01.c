@@ -165,10 +165,7 @@ void my_task1(void *p)
 	while(1)
 	{
 	    UARTprintf("%s",pcTaskName);
-	    for(i=0;i<mainDELAY_LOOP_COUNT;i++)
-	    {
-
-	    }
+	    vTaskDelay(10);
 	}
 }
 void my_task2(void *p)
@@ -178,10 +175,8 @@ void my_task2(void *p)
 	while(1)
 	{
 	    UARTprintf("%s",pcTaskName);
-	    for(i=0;i<mainDELAY_LOOP_COUNT;i++)
-	    {
+	    vTaskDelay(10);
 
-	    }
 	}
 
 }
@@ -206,7 +201,7 @@ main(void)
 
     Global_Queue_Handle=xQueueCreate(3,sizeof(int));
     UARTprintf("\n\nWelcome to the EK-TM4C123GXL FreeRTOS Demo!\n");
-    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,3,NULL);
+    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,1,NULL);
     xTaskCreate(my_task1, (signed portCHAR *)"my_task1", 1024, NULL,1,NULL);
 
 

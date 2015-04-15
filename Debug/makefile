@@ -20,7 +20,6 @@ $(GEN_CMDS__FLAG) \
 "./utils/uartstdio.obj" \
 "./switch_task.obj" \
 "./startup_ccs.obj" \
-"./output result.obj" \
 "./led_task.obj" \
 "./freertos_t01.obj" \
 -l"libc.a" \
@@ -148,8 +147,8 @@ freertos_t00.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "freertos_t00.out"
-	-$(RM) "freertos_t01.pp" "led_task.pp" "output result.pp" "startup_ccs.pp" "switch_task.pp" "utils\uartstdio.pp" "utils\ustdlib.pp" "third_party\FreeRTOS\Source\list.pp" "third_party\FreeRTOS\Source\queue.pp" "third_party\FreeRTOS\Source\tasks.pp" "third_party\FreeRTOS\Source\portable\MemMang\heap_2.pp" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\port.pp" "drivers\buttons.pp" "drivers\rgb.pp" 
-	-$(RM) "freertos_t01.obj" "led_task.obj" "output result.obj" "startup_ccs.obj" "switch_task.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" "third_party\FreeRTOS\Source\list.obj" "third_party\FreeRTOS\Source\queue.obj" "third_party\FreeRTOS\Source\tasks.obj" "third_party\FreeRTOS\Source\portable\MemMang\heap_2.obj" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\port.obj" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\portasm.obj" "drivers\buttons.obj" "drivers\rgb.obj" 
+	-$(RM) "freertos_t01.pp" "led_task.pp" "startup_ccs.pp" "switch_task.pp" "utils\uartstdio.pp" "utils\ustdlib.pp" "third_party\FreeRTOS\Source\list.pp" "third_party\FreeRTOS\Source\queue.pp" "third_party\FreeRTOS\Source\tasks.pp" "third_party\FreeRTOS\Source\portable\MemMang\heap_2.pp" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\port.pp" "drivers\buttons.pp" "drivers\rgb.pp" 
+	-$(RM) "freertos_t01.obj" "led_task.obj" "startup_ccs.obj" "switch_task.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" "third_party\FreeRTOS\Source\list.obj" "third_party\FreeRTOS\Source\queue.obj" "third_party\FreeRTOS\Source\tasks.obj" "third_party\FreeRTOS\Source\portable\MemMang\heap_2.obj" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\port.obj" "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\portasm.obj" "drivers\buttons.obj" "drivers\rgb.obj" 
 	-$(RM) "third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\portasm.pp" 
 	-@echo 'Finished clean'
 	-@echo ' '
