@@ -158,27 +158,25 @@ ConfigureUART(void)
 //*****************************************************************************
 xQueueHandle Global_Queue_Handle=0;
 #define mainDELAY_LOOP_COUNT		( 0xffffffff )
-void my_task1(void *p)
-{
-	const char *pcTaskName="Task 1 is running\n";
-	unsigned int i=0;
-	while(1)
-	{
-	    UARTprintf("%s",pcTaskName);
-	    vTaskDelay(10);
-	}
-}
 void my_task2(void *p)
 {
 	const char *pcTaskName="Task 2 is running\n";
-	unsigned int i=0;
 	while(1)
 	{
 	    UARTprintf("%s",pcTaskName);
-	    vTaskDelay(10);
-
+	    vTaskDelay(1000);
 	}
 
+}
+void my_task1(void *p)
+{
+	const char *pcTaskName="Task 1 is running\n";
+    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,1,NULL);
+	while(1)
+	{
+	    UARTprintf("%s",pcTaskName);
+	    vTaskDelay(1000);
+	}
 }
 
 int
@@ -201,7 +199,7 @@ main(void)
 
     Global_Queue_Handle=xQueueCreate(3,sizeof(int));
     UARTprintf("\n\nWelcome to the EK-TM4C123GXL FreeRTOS Demo!\n");
-    xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,1,NULL);
+    //xTaskCreate(my_task2, (signed portCHAR *)"my_task2", 1024, NULL,1,NULL);
     xTaskCreate(my_task1, (signed portCHAR *)"my_task1", 1024, NULL,1,NULL);
 
 
